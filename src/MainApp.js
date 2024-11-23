@@ -1,11 +1,8 @@
-import React, { useState, useEffect, Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import FallbackSpinner from './components/FallbackSpinner';
-import NavBarWithRouter from './components/NavBar';
-import Home from './components/Home';
+import React, { useEffect, useState } from 'react';
+// import { Switch } from 'react-router-dom';
 import endpoints from './constants/endpoints';
 
-function mainApp() {
+function MainApp() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -19,12 +16,12 @@ function mainApp() {
 
   return (
     <div className="MainApp">
-      <NavBarWithRouter />
+      {/* <NavBarWithRouter /> */}
       <main className="main">
-        <Switch>
-          <Suspense fallback={<FallbackSpinner />}>
-            <Route exact path="/" component={Home} />
-            {data
+        {/* <Switch> */}
+          {/* <Suspense fallback={<FallbackSpinner />}> */}
+            {/* <Route exact path="/" component={Home} /> */}
+            {/* {data
               && data.sections.map((route) => {
                 const SectionComponent = React.lazy(() => import('./components/' + route.component));
                 return (
@@ -36,12 +33,13 @@ function mainApp() {
                     )}
                   />
                 );
-              })}
-          </Suspense>
-        </Switch>
+              })} */}
+              Hello
+          {/* </Suspense> */}
+        {/* </Switch> */}
       </main>
     </div>
   );
 }
 
-export default mainApp;
+export default MainApp;
